@@ -21,7 +21,7 @@
       "blurb": "学習者向けに平易に書き直された逸話集。英語の易しさは随一。",
       "gutenbergId": 18442,
       "gutenbergUrl": "https://www.gutenberg.org/ebooks/18442",
-      "words": 32233,
+      "words": 32219,
       "file": "fifty-famous-stories.txt"
     },
     {
@@ -35,6 +35,18 @@
       "gutenbergUrl": "https://www.gutenberg.org/ebooks/14838",
       "words": 983,
       "file": "peter-rabbit.txt"
+    },
+    {
+      "slug": "momotaro",
+      "title": "Momotaro, or Little Peachling",
+      "titleJa": "桃太郎",
+      "author": "David Thompson (trans.)",
+      "level": "A2",
+      "blurb": "おなじみ桃太郎の英訳。短く平易で、話を知っている安心感がある。",
+      "gutenbergId": 33051,
+      "gutenbergUrl": "https://www.gutenberg.org/ebooks/33051",
+      "words": 740,
+      "file": "momotaro.txt"
     },
     {
       "slug": "wizard-of-oz",
@@ -71,6 +83,18 @@
       "gutenbergUrl": "https://www.gutenberg.org/ebooks/902",
       "words": 16372,
       "file": "happy-prince.txt"
+    },
+    {
+      "slug": "japanese-fairy-tales",
+      "title": "Japanese Fairy Tales",
+      "titleJa": "日本のおとぎ話集",
+      "author": "Yei Theodora Ozaki",
+      "level": "B1",
+      "blurb": "桃太郎・かぐや姫・舌切り雀など多数収録。やや文語的だが内容は馴染み深い。",
+      "gutenbergId": 4018,
+      "gutenbergUrl": "https://www.gutenberg.org/ebooks/4018",
+      "words": 70622,
+      "file": "japanese-fairy-tales.txt"
     },
     {
       "slug": "alice-in-wonderland",
