@@ -37,7 +37,8 @@ function stripGutenbergBoilerplate(raw) {
 /** RSVP 表示の雑音になる編集用マークアップを除去する。 */
 function cleanText(text) {
   return text
-    .replace(/\[Illustration[^\]]*\]/gis, '') // 挿絵マーカー
+    .replace(/^\s*Produced by[\s\S]*?\n\s*\n/i, '') // 先頭の校正者クレジット
+    .replace(/\[(?:Illustration|Japanese)[^\]]*\]/gis, '') // 挿絵・ローマ字キャプション
     .replace(/_/g, '') // PG の斜体マークアップ _word_
     .replace(/[ \t]+\n/g, '\n') // 行末の空白
     .replace(/\n{3,}/g, '\n\n') // 連続する空行を圧縮

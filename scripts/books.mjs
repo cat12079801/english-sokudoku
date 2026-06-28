@@ -34,6 +34,15 @@ export const BOOKS = [
     blurb: '非常に短く語彙も平易。1セッションで完走できる。',
   },
   {
+    id: 33051,
+    slug: 'momotaro',
+    title: 'Momotaro, or Little Peachling',
+    titleJa: '桃太郎',
+    author: 'David Thompson (trans.)',
+    level: 'A2',
+    blurb: 'おなじみ桃太郎の英訳。短く平易で、話を知っている安心感がある。',
+  },
+  {
     id: 55,
     slug: 'wizard-of-oz',
     title: 'The Wonderful Wizard of Oz',
@@ -59,6 +68,15 @@ export const BOOKS = [
     author: 'Oscar Wilde',
     level: 'B1',
     blurb: '短編集で長さは手頃。語彙はやや文学的。',
+  },
+  {
+    id: 4018,
+    slug: 'japanese-fairy-tales',
+    title: 'Japanese Fairy Tales',
+    titleJa: '日本のおとぎ話集',
+    author: 'Yei Theodora Ozaki',
+    level: 'B1',
+    blurb: '桃太郎・かぐや姫・舌切り雀など多数収録。やや文語的だが内容は馴染み深い。',
   },
   {
     id: 11,
