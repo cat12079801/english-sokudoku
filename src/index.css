@@ -269,6 +269,64 @@ button.primary {
   accent-color: var(--accent);
 }
 
+/* ---- Library: guide ---- */
+.guide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.guide-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+}
+
+.guide-title {
+  margin: 0 0 0.7rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.guide-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.guide-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.guide-badge {
+  flex: none;
+  min-width: 4.2rem;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.12rem 0.4rem;
+}
+
+.guide-note {
+  margin: 0.8rem 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
 /* ---- Library ---- */
 .section-title {
   font-size: 1.1rem;
