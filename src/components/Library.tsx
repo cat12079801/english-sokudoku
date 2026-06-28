@@ -44,6 +44,41 @@ export function Library({ onLoad }: Props) {
 
   return (
     <div className="library">
+      <section className="guide">
+        <div className="guide-block">
+          <h3 className="guide-title">レベルの目安（CEFR）</h3>
+          <ul className="guide-list">
+            <li>
+              <span className="guide-badge">A2</span>
+              初級。基本的な語彙と短い文。TOEIC Reading 200 点前後はこのあたり
+            </li>
+            <li>
+              <span className="guide-badge">B1</span>
+              中級。日常的な文章をある程度まとまった量で読める
+            </li>
+          </ul>
+          <p className="guide-note">A2–B1 はその中間。まず A2 から始めるとよい。</p>
+        </div>
+        <div className="guide-block">
+          <h3 className="guide-title">速度の目安（WPM = 1分あたりの語数）</h3>
+          <ul className="guide-list">
+            <li>
+              <span className="guide-badge">100–200</span>
+              ゆっくり。内容を確実に追いたいとき・初めての作品
+            </li>
+            <li>
+              <span className="guide-badge">200–300</span>
+              一般的な黙読の速度。慣れてきたら
+            </li>
+            <li>
+              <span className="guide-badge">300+</span>
+              速読トレーニング向け。理解が追える範囲で上げる
+            </li>
+          </ul>
+          <p className="guide-note">内容を理解できる速度から始め、少しずつ上げるのがコツ。</p>
+        </div>
+      </section>
+
       <h2 className="section-title">作品を選ぶ</h2>
       {error && <p className="error">{error}</p>}
       {!books && !error && <p className="muted">読み込み中…</p>}
