@@ -152,11 +152,12 @@ button.primary {
   overflow: hidden;
 }
 
-/* 基準文字を中央線に固定するため、3 つの span を grid で配置し
-   中央セルの幅を 0 にして pivot を画面中心に置く。 */
+/* 基準文字を中央線に固定する。中央セルを pivot の実寸（auto）にし、
+   左右を等幅の 1fr で挟むことで、pivot の中心が常に画面中央へ来る。
+   （幅 0 にすると pivot が左右の文字に重なってしまうため auto にする） */
 .word {
   display: grid;
-  grid-template-columns: 1fr 0 1fr;
+  grid-template-columns: 1fr auto 1fr;
   align-items: baseline;
   font-size: clamp(2rem, 8vw, 3.4rem);
   font-weight: 600;
@@ -170,7 +171,6 @@ button.primary {
 
 .word-pivot {
   color: var(--pivot);
-  justify-self: center;
 }
 
 .word-after {
