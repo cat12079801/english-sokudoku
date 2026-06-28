@@ -165,8 +165,14 @@ button.primary {
   letter-spacing: 0.02em;
 }
 
+/* 側列に min-width:0 を与え、内容（長い単語）で列が広がらないようにする。
+   これがないと左右の 1fr が非対称になり pivot が中心からずれ、
+   高速再生時に基準文字の位置が跳ねて「重なって見える」原因になる。
+   はみ出した文字は word-display の overflow:hidden で外側がクリップされる。 */
 .word-before {
   text-align: right;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 .word-pivot {
@@ -175,6 +181,8 @@ button.primary {
 
 .word-after {
   text-align: left;
+  min-width: 0;
+  white-space: nowrap;
 }
 
 .word-placeholder {
