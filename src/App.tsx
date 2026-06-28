@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Controls } from './components/Controls'
-import { TextInput } from './components/TextInput'
+import { Library, type Credit } from './components/Library'
 import { WordDisplay } from './components/WordDisplay'
 import { tokenize } from './lib/text'
 import { useRsvpPlayer } from './lib/useRsvpPlayer'
@@ -9,7 +9,18 @@ const SKIP = 10
 
 export default function App() {
   const [rawText, setRawText] = useState('')
+  const [credit, setCredit] = useState<Credit | null>(null)
   const [wpm, setWpm] = useState(300)
+
+  const loadText = useCallback((text: string, c: Credit | null) => {
+    setRawText(text)
+    setCredit(c)
+  }, [])
+
+  const clearText = useCallback(() => {
+    setRawText('')
+    setCredit(null)
+  }, [])
 
   const words = useMemo(() => tokenize(rawText), [rawText])
   const { index, playing, toggle, seek, reset } = useRsvpPlayer({ words, wpm })
@@ -57,9 +68,18 @@ export default function App() {
 
       <main>
         {!hasText ? (
-          <TextInput onLoad={setRawText} />
+          <Library onLoad={loadText} />
         ) : (
           <section className="reader">
+            {credit && (
+              <p className="credit">
+                {credit.title} — {credit.author}（出典:{' '}
+                <a href={credit.gutenbergUrl} target="_blank" rel="noreferrer">
+                  Project Gutenberg
+                </a>
+                ）
+              </p>
+            )}
             <WordDisplay word={finished ? null : currentWord} />
 
             {finished && (
@@ -83,8 +103,8 @@ export default function App() {
               onReset={reset}
             />
 
-            <button type="button" className="link-button" onClick={() => setRawText('')}>
-              別の英文を読み込む
+            <button type="button" className="link-button" onClick={clearText}>
+              別の作品を選ぶ
             </button>
           </section>
         )}
@@ -92,6 +112,13 @@ export default function App() {
 
       <footer className="app-footer">
         <span>Space: 再生/一時停止 ・ ← →: 10語スキップ ・ Home: 頭出し</span>
+        <span className="attribution">
+          同梱テキストはパブリックドメイン作品を{' '}
+          <a href="https://www.gutenberg.org/" target="_blank" rel="noreferrer">
+            Project Gutenberg
+          </a>{' '}
+          から取得・整形したもの。
+        </span>
       </footer>
     </div>
   )
